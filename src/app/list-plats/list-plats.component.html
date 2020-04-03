@@ -1,0 +1,27 @@
+<div class = "container">
+    <table class = "table table-striped">
+    <thead>
+    <tr>
+        <th>identifiant plat</th>
+        <th>nom</th>
+        <th>prix</th>
+        <!-- là c'est ce qui va apparaitre dans l'entête et donc ça n'a pas besoin d'être conforme à la syntaxe des attributs de User -->
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let unPlat of listPlats">
+        <td>{{unPlat.idPlat}}</td> 
+        <!-- ici par contre ça doit être conforme  -->
+        <td>{{unPlat.nomPlat}}</td>
+        <td>{{unPlat.prixPlat}}</td>
+        <td><button type ="button" class = "btn btn-danger" (click)="deletePlat(unPlat.idPlat)">Retirer de la carte</button></td>
+        <td><a class = "btn btn-primary" [routerLink]="['/updatePlat/'+unPlat.idPlat]">Modifier</a></td>
+        </tr>
+    </tbody>
+    
+    
+    </table>
+    
+    
+    
+    </div>

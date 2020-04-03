@@ -1,0 +1,15 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="NnomPlat">Nom</label>
+          <input type="text" class="form-control" name = "NnomPlat" [(ngModel)]="newPlat.nomPlat" >
+          <!-- newPlat créé dans le fichier .ts et nomPlat = attribut dans le model plat -->
+        </div>
+        <div class="form-group">
+            <label for="NprixPlat">Prix</label>
+            <input type="text" class="form-control" name = "NprixPlat" [(ngModel)]="newPlat.prixPlat" >
+          </div>
+        <button type="submit"  class="btn btn-primary" (click)="updatePlat(newPlat.idPlat,newPlat)">Modifier</button>
+        <!-- newPlat créé dans .ts et idPlat = attribut dans le model plat, updatePlat définie dans le service et reprise dans le .ts -->
+      </form>
+    </div>

@@ -1,0 +1,31 @@
+<div class = "container">
+    <table class = "table table-striped">
+    <thead>
+    <tr>
+        <th>identifiant Utilisateur</th>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>mail</th>
+        <th>Fonction</th>
+        <!-- là c'est ce qui va apparaitre dans l'entête et donc ça n'a pas besoin d'être conforme à la syntaxe des attributs de User -->
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let unUser of listUsers">
+        <td>{{unUser.idUser}}</td> 
+        <!-- ici par contre ça doit être conforme  -->
+        <td>{{unUser.nomUser}}</td>
+        <td>{{unUser.prenomUser}}</td>
+        <td>{{unUser.mailUser}}</td>
+        <td>{{unUser.role.nomRole}}</td>
+        <td><button type ="button" class = "btn btn-danger" (click)="deleteUser(unUser.idUser)">Supprimer</button></td>
+        <td><a class = "btn btn-primary" [routerLink]="['/updateUser/'+unUser.idUser]">Modifier</a></td>
+        </tr>
+    </tbody>
+    
+    
+    </table>
+    
+    
+    
+    </div>

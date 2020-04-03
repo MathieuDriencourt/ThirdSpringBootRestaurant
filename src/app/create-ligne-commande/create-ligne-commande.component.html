@@ -1,0 +1,26 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="plat">Choisissez un plat</label>
+          <select class="form-control" name="plat" [(ngModel)]="newLigneCommande.plat">
+            <option *ngFor="let unPlat of listPlats" [ngValue]="unPlat">
+              {{unPlat.idPlat}}
+              {{unPlat.nomPlat}}
+              {{unPlat.prixPlat}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="commande">Sélectionner un numéro de Commande</label>
+            <select class="form-control" name="commande" [(ngModel)]="newLigneCommande.commande">
+              <option *ngFor="let unCommande of listCommandes" [ngValue]="unCommande">
+                {{unCommande.idCommande}}
+                {{unCommande.montantCommande}}
+                {{unCommande.employee}}
+              </option>
+            </select>
+          </div>
+        <button type="submit" (click)="createLigneCommande()" class="btn btn-primary">Envoi</button>
+      </form>
+    </div>
+    
