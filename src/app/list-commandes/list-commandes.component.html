@@ -1,1 +1,27 @@
-<p>list-commandes works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+    <th>idCommande</th>
+    <th>Entrée</th>
+    <th>Plat</th>
+    <th>Dessert</th>
+    <th>Boisson</th>
+    <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let unCommande of listCommandes">
+        <td>{{unCommande.idCommande}}</td>
+        <td>{{unCommande.entree.nomEntree}}</td>
+        <td>{{unCommande.plat.nomPlat}}</td>
+        <td>{{unCommande.dessert.nomDessert}}</td>
+        <td>{{unCommande.boisson.nomBoisson}}</td>
+        <!-- Calixte -->
+        <td>{{unCommande.entree.prixEntree + unCommande.plat.prixPlat + unCommande.dessert.prixDessert + unCommande.boisson.prixBoisson}}</td>
+        <!-- Calixte -->
+        <td><button type ="button" class = "btn btn-danger" (click)="deleteCommande(unCommande.idCommande)">Supprimer une commande</button></td>
+        <!-- A faire component updateCommande -->
+        <td><a class = "btn btn-primary" [routerLink]="['/updateCommande/'+unCommande.idCommande]"> Modifier une commande</a></td>
+        </tr>
+    </tbody>
+    </table>
