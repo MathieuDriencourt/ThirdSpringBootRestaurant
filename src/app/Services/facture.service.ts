@@ -28,7 +28,7 @@ export class FactureService {
   getById(idFacture : number) {
     return this.http.get<Facture>('http://localhost:8080/facture/' + idFacture).pipe()
   }
-  create(facture : Facture, idCommande : number) {
-    return this.http.post<Facture>('http://localhost:8080/facture/' + idCommande, facture).pipe()
+  createBis(idCommande : number) {
+    return this.http.post<Facture>('http://localhost:8080/facture/' + idCommande, idCommande).pipe()
   }
 }

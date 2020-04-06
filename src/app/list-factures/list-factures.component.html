@@ -4,27 +4,17 @@
     <th>idFacture</th>
     <th>idCommande</th>
     <th>Montant</th>
-    <th>Plat</th>
-    <th>Dessert</th>
-    <th>Boisson</th>
-    <th>Supprimer commande</th>
-    <th>Editer facture</th>
     </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let unFacture of listFactures">
-        <td>{{unCommande.idCommande}}</td>
-        <td>{{unCommande?.employee?.nomUser}}  {{unCommande?.employee?.prenomUser}}</td>
-        <td>{{unCommande?.entree?.nomEntree}} x {{unCommande.qteEntree}}</td>
-        <td>{{unCommande?.plat?.nomPlat}} x {{unCommande.qtePlat}}</td>
-        <td>{{unCommande?.dessert?.nomDessert}} x {{unCommande.qteDessert}}</td>
-        <td>{{unCommande?.boisson?.nomBoisson}} x {{unCommande.qteBoisson}}</td>
-        <!-- Calixte -->
+        <td>{{unFacture.idFacture}}</td>
+        <td>{{unFacture.montantFacture}}€</td>
+        <td>{{unFacture?.commande?.idCommande}}</td>
+        
+       
         <!-- <td>{{unCommande.entree.prixEntree + unCommande.plat.prixPlat + unCommande.dessert.prixDessert + unCommande.boisson.prixBoisson}}</td> -->
-        <!-- Calixte -->
-        <td><button type ="button" class = "btn btn-danger" (click)="deleteCommande(unCommande.idCommande)">Supprimer</button></td>
-        <!-- A faire component updateCommande -->
-        <button type="submit" (click)="createFacture()" class="btn btn-primary">Editer Facture</button>
+        <!-- <td><button type ="button" class = "btn btn-danger" (click)="deleteFacture(unFacture.idFacture)">Supprimer</button></td> -->
         <!--<td><button type = "button" class = "btn btn-warning" (click)="create(newFacture, unCommande.idCommande)">Facture</button></td> -->
         <!-- <td><a class = "btn btn-primary" [routerLink]="['/updateCommande/'+unCommande.idCommande]"> Modifier une commande</a></td> -->
         </tr>

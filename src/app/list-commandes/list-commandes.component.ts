@@ -32,8 +32,8 @@ export class ListCommandesComponent implements OnInit {
     )
   }
 
-  create(newFacture : Facture, idCommande : number) {
-    this.factureService.create(newFacture, idCommande).subscribe(
+  createBis(idCommande : number) {
+    this.factureService.createBis(idCommande).subscribe(
       data =>{
         console.log(data);
         window.location.href = "http://localhost:4200/facture"
