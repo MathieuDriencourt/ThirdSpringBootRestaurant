@@ -9,6 +9,8 @@ import { BoissonService } from '../Services/boisson.service';
 import { Entree } from '../model/Entree';
 import { Dessert } from '../model/Dessert';
 import { Boisson } from '../model/Boisson';
+import { UserService } from '../Services/user.service';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-create-commande',
@@ -21,8 +23,9 @@ export class CreateCommandeComponent implements OnInit {
   listPlats : Plat[] = [];
   listDesserts : Dessert[] = [];
   listBoissons : Boisson[] = [];
+  listUsers : User[] = [];
 
-  constructor(private commandeService : CommandeService, private entreeService : EntreeService, private platService : PlatService, private dessertService : DessertService, private boissonService : BoissonService) { }
+  constructor(private commandeService : CommandeService, private entreeService : EntreeService, private platService : PlatService, private dessertService : DessertService, private boissonService : BoissonService, private userService : UserService) { }
 
   ngOnInit(): void {
     
@@ -47,6 +50,12 @@ export class CreateCommandeComponent implements OnInit {
     this.boissonService.getAll().subscribe(
       data => {
         this.listBoissons = data;
+      }
+    )
+
+    this.userService.getAll().subscribe(
+      data => {
+        this.listUsers = data;
       }
     )
   }

@@ -18,7 +18,7 @@ export class CommandeService {
   }
 
   deleteCommande(idCommande : number) {
-    return this.http.delete<number>('http.//localhost:8080/commande/' + idCommande).pipe()
+    return this.http.delete<number>('http://localhost:8080/commande/' + idCommande).pipe()
   }
 
   updateCommande(idCommande : number, commande : Commande) {

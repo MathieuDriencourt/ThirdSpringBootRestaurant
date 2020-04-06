@@ -5,20 +5,23 @@
           <input type="text" class="form-control" name = "NnomUser" [(ngModel)]="newUser.nomUser">
         </div>
         <div class="form-group">
-            <label for="NprenomUser">Prenom</label>
+            <label for="NprenomUser">Prénom</label>
             <input type="text" class="form-control" name = "NprenomUser" [(ngModel)]="newUser.prenomUser">
           </div>
         <div class="form-group">
-          <label for="Nemail">Email</label>
+          <label for="Nemail">Adresse email</label>
           <input name="Nemail" type="text" class="form-control" [(ngModel)]="newUser.mailUser">
+        </div>
+        <div class="form-group">
+          <label for="Ntelephone">Numéro de téléphone</label>
+          <input name="Ntelephone" type="text" class="form-control" [(ngModel)]="newUser.telephoneUser">
         </div>
           <div class="form-group">
             <label for="Nrole">Fonction</label>
             <select class="form-control" name="Nrole" [(ngModel)]="newUser.role">
-              <option selected disabled>Changer la fonction de l'utilisateur</option>
-              <option value = "Client">Client</option>
-              <option value = "Employee">Employee</option>
-              <option value = "Manager">Manager</option>
+              <option *ngFor="let unRole of listRoles" [ngValue]="unRole">
+                {{unRole.nomRole}}
+              </option>
             </select>
           </div>
         <button type="submit"  class="btn btn-primary" (click)="updateUser(newUser.idUser,newUser)">Modifier</button>

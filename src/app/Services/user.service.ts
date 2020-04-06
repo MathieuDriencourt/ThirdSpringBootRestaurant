@@ -18,7 +18,7 @@ export class UserService {
   }
 
   deleteUser(idUser : number) {
-    return this.http.delete<number>('http.//localhost:8080/user/' + idUser).pipe()
+    return this.http.delete<number>('http://localhost:8080/user/' + idUser).pipe()
   }
 
   updateUser(idUser : number, user : User) {

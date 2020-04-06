@@ -9,6 +9,7 @@ import { UserService } from '../Services/user.service';
 })
 export class ListUsersComponent implements OnInit {
   listUsers : User[] = [];
+  
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class ListUsersComponent implements OnInit {
         this.listUsers=data;
       }
     )  
-    }
+  }
 
 
   deleteUser(idUser : number) {

@@ -1,0 +1,17 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="client">Utilisateur</label>
+        <select class="form-control" name="employee" [(ngModel)]="newReservationMidi.client">
+          <option *ngFor="let unUser of listUsers" [ngValue]="unUser">
+            {{unUser.idUser}}   {{unUser.nomUser}}   {{unUser.prenomUser}}
+          </option>
+        </select>
+          <label for="dateReservationMidi">Date</label>
+          <input name="dateReservationMidi" type="date" class="form-control" [(ngModel)]="newReservationMidi.dateReservationMidi">
+          <label for="nbPersonnnesReservationMidi">Nombre de personnes</label>
+          <input name="nbPersonnnesReservationMidi" type="number" class="form-control" [(ngModel)]="newReservationMidi.nbPersonnnesReservationMidi">
+        </div>
+        <button type="submit" (click)="createReservationMidi()" class="btn btn-primary">Réserver</button>
+      </form>
+    </div>

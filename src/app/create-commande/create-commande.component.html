@@ -1,37 +1,54 @@
 <div class="container">
     <form>
+      <div class="form-group">
+        <label for="employee">identifiant utilisateur</label>
+        <select class="form-control" name="employee" [(ngModel)]="newCommande.employee">
+          <option *ngFor="let unUser of listUsers" [ngValue]="unUser">
+            {{unUser.idUser}}   {{unUser.nomUser}}   {{unUser.prenomUser}}
+          </option>
+        </select>
+      </div>
         <div class="form-group">
           <label for="entree">Entrée</label>
           <select class="form-control" name="entree" [(ngModel)]="newCommande.entree">
             <option *ngFor="let unEntree of listEntrees" [ngValue]="unEntree">
-              {{unEntree.nomEntree}}{{unEntree.prixEntree}}€
+              {{unEntree.nomEntree}}   {{unEntree.prixEntree}}€
             </option>
           </select>
+          <label for="QteEntree"></label>
+          <input name="QteEntree" class="form-control" type="number" placeholder="Quantité" [(ngModel)]="newCommande.qteEntree">
         </div>
         <div class="form-group">
             <label for="plat">Plat</label>
             <select class="form-control" name="plat" [(ngModel)]="newCommande.plat">
               <option *ngFor="let unPlat of listPlats" [ngValue]="unPlat">
-                {{unPlat.nomPlat}}{{unPlat.prixPlat}}€
+                {{unPlat.nomPlat}}   {{unPlat.prixPlat}}€
               </option>
             </select>
+            <label for="QtePlat"></label>
+            <input name="QtePlat" class="form-control" type="number" placeholder="Quantité" [(ngModel)]="newCommande.qtePlat">
           </div>
           <div class="form-group">
             <label for="dessert">Dessert</label>
             <select class="form-control" name="dessert" [(ngModel)]="newCommande.dessert">
               <option *ngFor="let unDessert of listDesserts" [ngValue]="unDessert">
-                {{unDessert.nomDessert}}{{unDessert.prixDessert}}€
+                {{unDessert.nomDessert}}   {{unDessert.prixDessert}}€
               </option>
             </select>
+            <label for="QteDessert"></label>
+            <input name="QteDessert" class="form-control" type="number" placeholder="Quantité" [(ngModel)]="newCommande.qteDessert">
           </div>
           <div class="form-group">
             <label for="boisson">Boisson</label>
             <select class="form-control" name="boisson" [(ngModel)]="newCommande.boisson">
               <option *ngFor="let unBoisson of listBoissons" [ngValue]="unBoisson">
-                {{unBoisson.nomBoisson}}{{unBoisson.prixBoisson}}€
+                {{unBoisson.nomBoisson}}   {{unBoisson.prixBoisson}}€
               </option>
             </select>
+            <label for="QteBoisson"></label>
+            <input name="QteBoissson" class="form-control" type="number" placeholder="Quantité" [(ngModel)]="newCommande.qteBoisson">
           </div>
         <button type="submit" (click)="createCommande()" class="btn btn-primary">Valider</button>
       </form>
     </div>
+    

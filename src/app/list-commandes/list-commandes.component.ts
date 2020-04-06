@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandeService } from '../Services/commande.service';
 import { Commande } from '../model/Commande';
+import { FactureService } from '../Services/facture.service';
+import { Facture } from '../model/Facture';
 
 @Component({
   selector: 'app-list-commandes',
@@ -9,8 +11,9 @@ import { Commande } from '../model/Commande';
 })
 export class ListCommandesComponent implements OnInit {
   listCommandes : Commande [] = [];
+  newFacture : Facture = new Facture()
 
-  constructor(private commandeService : CommandeService) { }
+  constructor(private commandeService : CommandeService, private factureService : FactureService) { }
 
   ngOnInit(): void {
     this.commandeService.getAll().subscribe(
@@ -28,5 +31,15 @@ export class ListCommandesComponent implements OnInit {
       }
     )
   }
+
+  create(newFacture : Facture, idCommande : number) {
+    this.factureService.create(newFacture, idCommande).subscribe(
+      data =>{
+        console.log(data);
+        window.location.href = "http://localhost:4200/facture"
+      }
+    )
+  }
+  
 
 }

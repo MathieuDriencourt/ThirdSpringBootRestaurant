@@ -4,5 +4,6 @@ export class User {
     nomUser : string;
     prenomUser : string;
     mailUser : string;
+    telephoneUser : string;
     role : Role;
 }

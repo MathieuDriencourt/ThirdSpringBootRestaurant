@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+    <th>idReservation</th>
+    <th>Date</th>
+    <th>Nombre de personnes</th>
+    <th>utilisateur</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let unReservationSoir of listReservationsSoir">
+        <td>{{unReservationSoir.idReservationSoir}}</td>
+        <td>{{unReservationSoir.dateReservationSoir}}</td>
+        <td>{{unReservationSoir.nbPersonnnesReservationSoir}}</td>
+        <td>{{unReservationSoir?.client?.prenomUser}}   {{unReservationSoir?.client?.nomUser}}</td>
+        <td><button type ="button" class = "btn btn-danger" (click)="deleteReservationSoir(unReservationSoir.idReservationSoir)">Supprimer cette réservation</button></td>
+        <!-- <td><a class = "btn btn-primary" [routerLink]="['/updateCommande/'+unCommande.idCommande]"> Modifier une réservation</a></td> -->
+        </tr>
+    </tbody>
+    </table>

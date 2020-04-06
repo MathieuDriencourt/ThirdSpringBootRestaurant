@@ -10,8 +10,8 @@ import { Role } from '../model/Role';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-  newUser : User = new User;
-  listRoles : Role[] = []
+  newUser : User = new User();
+  listRoles : Role[] = [];
   constructor(private userService : UserService, private roleService : RoleService) { }
 
   ngOnInit(): void {
@@ -26,7 +26,8 @@ export class CreateUserComponent implements OnInit {
   createUser() {
     this.userService.createUser(this.newUser).subscribe(
       data => {
-        window.location.href = "http://localhost:4200/user"
+        console.log(data)
+        window.location.href = 'http://localhost:4200/user'
       }
     )
   }
