@@ -37,6 +37,7 @@ constructor(private reservationMidiService : ReservationMidiService, private use
     this.reservationMidiService.updateReservationMidi(idRM, newReservationMidi).subscribe(
       data => {
         console.log(data)
+        window.location.href = 'http://localhost:4200/reservationMidi'
       }
     )
   }

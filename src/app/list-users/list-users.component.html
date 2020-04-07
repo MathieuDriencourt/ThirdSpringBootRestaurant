@@ -7,6 +7,8 @@
         <th>Prenom</th>
         <th>Mail</th>
         <th>Fonction</th>
+        <th>Supprimer utilisateur</th>
+        <th>Modifier utilisateur</th>
         <!-- là c'est ce qui va apparaitre dans l'entête et donc ça n'a pas besoin d'être conforme à la syntaxe des attributs de User -->
     </tr>
     </thead>
@@ -19,7 +21,7 @@
         <td>{{unUser.mailUser}}</td>
         <td>{{unUser?.role?.nomRole}}</td>
         <td><button type ="button" class = "btn btn-danger" (click)="deleteUser(unUser.idUser)">Supprimer</button></td>
-        <!-- <td><a class = "btn btn-primary" [routerLink]="['/updateUser/'+unUser.idUser]">Modifier</a></td> -->
+        <td><a class = "btn btn-primary" [routerLink]="['/updateUser/'+unUser.idUser]">Modifier</a></td>
         </tr>
     </tbody>
     

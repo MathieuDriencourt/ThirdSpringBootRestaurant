@@ -1,10 +1,12 @@
 <table class="table table-striped">
     <thead>
     <tr>
-    <th>idReservation</th>
+    <th>IdReservation</th>
     <th>Date</th>
     <th>Nombre de personnes</th>
-    <th>utilisateur</th>
+    <th>Utilisateur</th>
+    <th>Supprimer réservation</th>
+    <th>Modifier réservation</th>
     </tr>
     </thead>
     <tbody>
@@ -13,8 +15,8 @@
         <td>{{unReservationSoir.dateReservationSoir}}</td>
         <td>{{unReservationSoir.nbPersonnnesReservationSoir}}</td>
         <td>{{unReservationSoir?.client?.prenomUser}}   {{unReservationSoir?.client?.nomUser}}</td>
-        <td><button type ="button" class = "btn btn-danger" (click)="deleteReservationSoir(unReservationSoir.idReservationSoir)">Supprimer cette réservation</button></td>
-        <!-- <td><a class = "btn btn-primary" [routerLink]="['/updateReservationSoir/'+unReservationSoir.idReservationSoir]"> Modifier une réservation</a></td> -->
+        <td><button type ="button" class = "btn btn-danger" (click)="deleteReservationSoir(unReservationSoir.idReservationSoir)">Supprimer</button></td>
+        <td><a class = "btn btn-primary" [routerLink]="['/updateReservationSoir/'+unReservationSoir.idReservationSoir]"> Modifier</a></td>
         </tr>
     </tbody>
     </table>

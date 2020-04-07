@@ -40,6 +40,7 @@ export class UpdateReservationSoirComponent implements OnInit {
     this.reservationSoirService.updateReservationSoir(idRS, reservationSoir).subscribe(
       data => {
         console.log(data)
+        window.location.href = 'http://localhost:4200/reservationSoir'
       }
     )
   }

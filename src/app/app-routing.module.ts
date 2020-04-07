@@ -27,6 +27,8 @@ import { ListBoissonsComponent } from './list-boissons/list-boissons.component';
 import { CreateEntreesComponent } from './create-entrees/create-entrees.component';
 import { CreateDessertComponent } from './create-dessert/create-dessert.component';
 import { CreateBoissonComponent } from './create-boisson/create-boisson.component';
+import { UpdateReservationMidiComponent } from './update-reservation-midi/update-reservation-midi.component';
+import { UpdateReservationSoirComponent } from './update-reservation-soir/update-reservation-soir.component';
 
 
 
@@ -128,6 +130,14 @@ const routes: Routes = [
   {
     path : "updateReservation/:idR",
     component : UpdateReservationComponent
+  },
+  {
+    path : "updateReservationMidi/:idRM",
+    component : UpdateReservationMidiComponent
+  },
+  {
+    path : "updateReservationSoir/:idRS",
+    component : UpdateReservationSoirComponent
   },
   {
     path : "updatePlat/:idP",
