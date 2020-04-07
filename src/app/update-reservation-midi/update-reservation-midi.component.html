@@ -1,1 +1,17 @@
-<p>update-reservation-midi works!</p>
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="Nclient">Utilisateur</label>
+        <select class="form-control" name="Nclient" [(ngModel)]="newReservationMidi.client">
+          <option *ngFor="let unUser of listUsers" [ngValue]="unUser">
+            {{unUser.idUser}}   {{unUser.nomUser}}   {{unUser.prenomUser}}
+          </option>
+        </select>
+          <label for="NdateReservationMidi">Date</label>
+          <input name="NdateReservationMidi" type="date" class="form-control" [(ngModel)]="newReservationMidi.dateReservationMidi">
+          <label for="NnbPersonnnesReservationMidi">Nombre de personnes</label>
+          <input name="NnbPersonnnesReservationMidi" type="number" class="form-control" [(ngModel)]="newReservationMidi.nbPersonnnesReservationMidi">
+        </div>
+        <button type="submit" (click)="updateReservationMidi(newReservationMidi.idReservationMidi, newReservationMidi)" class="btn btn-primary">Réserver</button>
+      </form>
+    </div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="nomDessert">Nom</label>
+          <input type="text" class="form-control" name = "nomDessert" [(ngModel)]="newDessert.nomDessert">
+        </div>
+        <div class="form-group">
+            <label for="prixDessert">Prix</label>
+            <input type="text" class="form-control" name = "prixDessert" [(ngModel)]="newDessert.prixDessert">
+          </div>
+        <button type="submit"  class="btn btn-primary" (click)="createDessert()">Créer dessert</button>
+      </form>
+    </div>

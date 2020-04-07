@@ -8,7 +8,7 @@ import { Plat } from '../model/Plat';
   styleUrls: ['./create-plat.component.css']
 })
 export class CreatePlatComponent implements OnInit {
-  newPlat : Plat = new Plat()
+  newPlat : Plat = new Plat();
 
   constructor(private platService : PlatService) { }
 

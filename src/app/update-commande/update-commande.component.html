@@ -1,7 +1,7 @@
 <div class="container">
     <form>
       <div class="form-group">
-        <label for="Nemployee">identifiant utilisateur</label>
+        <label for="Nemployee">Utilisateur</label>
         <select class="form-control" name="Nemployee" [(ngModel)]="newCommande.employee">
           <option *ngFor="let unUser of listUsers" [ngValue]="unUser">
             {{unUser.idUser}}   {{unUser.nomUser}}   {{unUser.prenomUser}}

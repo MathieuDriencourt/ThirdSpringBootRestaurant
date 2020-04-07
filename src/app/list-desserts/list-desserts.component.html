@@ -2,7 +2,7 @@
     <table class = "table table-striped">
     <thead>
     <tr>
-        <th>Identifiant plat</th>
+        <th>Identifiant dessert</th>
         <th>Nom</th>
         <th>Prix</th>
         <th>Retirer de la carte</th>
@@ -10,12 +10,12 @@
     </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let unPlat of listPlats">
-        <td>{{unPlat.idPlat}}</td> 
+        <tr *ngFor = "let unDessert of listDesserts">
+        <td>{{unDessert.idDessert}}</td> 
         <!-- ici par contre ça doit être conforme  -->
-        <td>{{unPlat.nomPlat}}</td>
-        <td>{{unPlat.prixPlat}}€</td>
-        <td><button type ="button" class = "btn btn-danger" (click)="deletePlat(unPlat.idPlat)">Supprimer</button></td>
+        <td>{{unDessert.nomDessert}}</td>
+        <td>{{unDessert.prixDessert}}€</td>
+        <td><button type ="button" class = "btn btn-danger" (click)="deleteDessert(unDessert.idDessert)">Supprimer</button></td>
         <!-- <td><a class = "btn btn-primary" [routerLink]="['/updatePlat/'+unPlat.idPlat]">Modifier</a></td> -->
         </tr>
     </tbody>

@@ -29,6 +29,12 @@ import { CreateReservationSoirComponent } from './create-reservation-soir/create
 import { ListReservationSoirComponent } from './list-reservation-soir/list-reservation-soir.component';
 import { UpdateReservationMidiComponent } from './update-reservation-midi/update-reservation-midi.component';
 import { UpdateReservationSoirComponent } from './update-reservation-soir/update-reservation-soir.component';
+import { ListEntreesComponent } from './list-entrees/list-entrees.component';
+import { ListDessertsComponent } from './list-desserts/list-desserts.component';
+import { ListBoissonsComponent } from './list-boissons/list-boissons.component';
+import { CreateEntreesComponent } from './create-entrees/create-entrees.component';
+import { CreateDessertComponent } from './create-dessert/create-dessert.component';
+import { CreateBoissonComponent } from './create-boisson/create-boisson.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +62,13 @@ import { UpdateReservationSoirComponent } from './update-reservation-soir/update
     CreateReservationSoirComponent,
     ListReservationSoirComponent,
     UpdateReservationMidiComponent,
-    UpdateReservationSoirComponent
+    UpdateReservationSoirComponent,
+    ListEntreesComponent,
+    ListDessertsComponent,
+    ListBoissonsComponent,
+    CreateEntreesComponent,
+    CreateDessertComponent,
+    CreateBoissonComponent
   ],
   imports: [
     BrowserModule,

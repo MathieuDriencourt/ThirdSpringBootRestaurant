@@ -7,6 +7,11 @@ import { Plat } from '../model/Plat';
 import { Dessert } from '../model/Dessert';
 import { Boisson } from '../model/Boisson';
 import { User } from '../model/User';
+import { BoissonService } from '../Services/boisson.service';
+import { DessertService } from '../Services/dessert.service';
+import { PlatService } from '../Services/plat.service';
+import { EntreeService } from '../Services/entree.service';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-update-commande',
@@ -22,12 +27,43 @@ export class UpdateCommandeComponent implements OnInit {
   listBoissons : Boisson[] = [];
   listUsers : User[] = [];
   
-  constructor(private commandeService : CommandeService, private route : ActivatedRoute) { }
+  constructor(private commandeService : CommandeService, private entreeService : EntreeService, private platService : PlatService, private dessertService : DessertService, private boissonService : BoissonService, private userService : UserService, private route : ActivatedRoute) { 
+    this.idCommandeURL = parseInt(this.route.snapshot.paramMap.get('idC'));
+  }
 
   ngOnInit(): void {
     this.commandeService.getById(this.idCommandeURL).subscribe(
       data => {
           this.newCommande = data;
+        }
+      )
+      this.entreeService.getAll().subscribe(
+        data => {
+          this.listEntrees = data;
+        }
+      )
+  
+        this.platService.getAll().subscribe(
+        data => {
+          this.listPlats = data;
+        }
+      )
+  
+      this.dessertService.getAll().subscribe(
+        data => {
+          this.listDesserts = data;
+        }
+      )
+  
+      this.boissonService.getAll().subscribe(
+        data => {
+          this.listBoissons = data;
+        }
+      )
+  
+      this.userService.getAll().subscribe(
+        data => {
+          this.listUsers = data;
         }
       )
   }

@@ -1,1 +1,17 @@
-<p>update-reservation-soir works!</p>
+<div class="container">
+    <form>
+        <div class="form-group">
+          <label for="Nclient">Utilisateur</label>
+        <select class="form-control" name="Nclient" [(ngModel)]="newReservationSoir.client">
+          <option *ngFor="let unUser of listUsers" [ngValue]="unUser">
+            {{unUser.idUser}}   {{unUser.nomUser}}   {{unUser.prenomUser}}
+          </option>
+        </select>
+          <label for="NdateReservationSoir">Date</label>
+          <input name="NdateReservationSoir" type="date" class="form-control" [(ngModel)]="newReservationSoir.dateReservationSoir">
+          <label for="NnbPersonnnesReservationSoir">Nombre de personnes</label>
+          <input name="NnbPersonnnesReservationSoir" type="number" class="form-control" [(ngModel)]="newReservationSoir.nbPersonnnesReservationSoir">
+        </div>
+        <button type="submit" (click)="updateReservationSoir(newReservationSoir.idReservationSoir, newReservationSoir)" class="btn btn-primary">Réserver</button>
+      </form>
+    </div>

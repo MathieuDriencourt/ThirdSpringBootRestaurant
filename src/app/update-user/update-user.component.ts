@@ -15,7 +15,10 @@ export class UpdateUserComponent implements OnInit {
   idUserURL : number;
   listRoles : Role [] = [];
 
-  constructor(private userService : UserService, private roleService : RoleService, private route : ActivatedRoute) { }
+  constructor(private userService : UserService, private roleService : RoleService, private route : ActivatedRoute) { 
+    this.idUserURL = parseInt(this.route.snapshot.paramMap.get('idU'));
+  }
+  
 
   ngOnInit(): void {
     this.userService.getById(this.idUserURL).subscribe(

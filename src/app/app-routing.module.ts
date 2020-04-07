@@ -21,6 +21,12 @@ import { ListReservationMidiComponent } from './list-reservation-midi/list-reser
 import { CreateReservationMidiComponent } from './create-reservation-midi/create-reservation-midi.component';
 import { ListReservationSoirComponent } from './list-reservation-soir/list-reservation-soir.component';
 import { CreateReservationSoirComponent } from './create-reservation-soir/create-reservation-soir.component';
+import { ListEntreesComponent } from './list-entrees/list-entrees.component';
+import { ListDessertsComponent } from './list-desserts/list-desserts.component';
+import { ListBoissonsComponent } from './list-boissons/list-boissons.component';
+import { CreateEntreesComponent } from './create-entrees/create-entrees.component';
+import { CreateDessertComponent } from './create-dessert/create-dessert.component';
+import { CreateBoissonComponent } from './create-boisson/create-boisson.component';
 
 
 
@@ -58,8 +64,20 @@ const routes: Routes = [
     component : ListFacturesComponent
   },
   {
+    path : 'entree',
+    component : ListEntreesComponent
+  },
+  {
     path : 'plat',
     component : ListPlatsComponent
+  },
+  {
+    path : 'dessert',
+    component : ListDessertsComponent
+  },
+  {
+    path : 'boisson',
+    component : ListBoissonsComponent
   },
   {
     path : 'createUser',
@@ -84,8 +102,20 @@ const routes: Routes = [
     component : CreateFactureComponent
   },
   {
+    path : 'createEntree',
+    component : CreateEntreesComponent
+  },
+  {
     path : 'createPlat',
     component : CreatePlatComponent
+  },
+  {
+    path : 'createDessert',
+    component : CreateDessertComponent
+  },
+  {
+    path : 'createBoisson',
+    component : CreateBoissonComponent
   },
   {
     path : "updateUser/:idU",
